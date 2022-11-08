@@ -26,7 +26,7 @@ export const Score = () => {
                     },
                     {
                         score: 15, // 100
-                        value: 10 // 86.66
+                        value: 10 // 86.666
                     }
                 ]
             },
