@@ -59,21 +59,23 @@ export const Score = () => {
         ]
     }
 
-    let sum = 0;
-    let totallength = 0;
+// ithu na potathu basic:
 
-    const result = building.rooms.map((build) => {
-        totallength = totallength + build.tasks.length;
-        build.tasks.map((t) => sum = sum + ((t.value / t.score) * 100))
-    });
+    // let sum = 0;
+    // let totallength = 0;
 
-    console.log(result);
-    console.log(sum);
+    // const result = building.rooms.map((build) => {
+    //     totallength = totallength + build.tasks.length;
+    //     build.tasks.map((t) => sum = sum + ((t.value / t.score) * 100))
+    // });
+
+    // console.log(result);
+    // console.log(sum);
+
     let percent = Math.round(GetPercentage(building.rooms).totalper);
 
     return (
         <>
-
             <Box sx={{ position: 'relative', display: 'inline-flex' }}>
                 <CircularProgress sx={{ width: '100px', height: "200px" }} size="100px" thickness={5} variant="determinate" value={percent} />
                 <Box
