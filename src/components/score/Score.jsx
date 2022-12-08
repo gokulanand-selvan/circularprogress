@@ -76,7 +76,7 @@ export const Score = () => {
 
     return (
         <>
-            <Box sx={{ position: 'relative', display: 'inline-flex' }}>
+            <Box sx={{ position: 'relative', display: 'inline-flex' ,}}>
                 <CircularProgress sx={{ width: '100px', height: "200px" }} size="100px" thickness={5} variant="determinate" value={percent} />
                 <Box
                     sx={{
