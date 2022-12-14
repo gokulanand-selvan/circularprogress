@@ -3,7 +3,6 @@ import React from "react";
 import { useState } from "react";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { AiOutlineArrowRight } from "react-icons/ai";
-import { FaBeer } from 'react-icons/fa';
 
 export default function HundredArray({ items }) {
   const [start, setStart] = useState(0);
