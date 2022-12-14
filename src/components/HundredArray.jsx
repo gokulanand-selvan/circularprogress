@@ -7,48 +7,47 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 export default function HundredArray({ items }) {
   const [start, setStart] = useState(0);
   const [end, setEnd] = useState(10);
-  const [ind,setInd] = useState(0);
-  
-  // console.log(items.map((i, index) => ({...i, body : ` ${index + 1} - ${i.body}`})));
-  
-  const arr = Array.from(Array(Math.floor(items.length / 10)).keys());
-  
-  const display = items.slice(start, end);
-  
-  // console.log(start);
-  // console.log(end);
-console.log(ind);
-  
-  return (
-<Box>
-    {display.map((e) => {
-        return <ListItem>{e.body}</ListItem>;
-      })}
+  const [ind, setInd] = useState(0);
 
+  // console.log(items.map((i, index) => ({...i, body : ` ${index + 1} - ${i.body}`})));
+
+  const arr = Array.from(Array(Math.floor(items.length / 10)).keys());
+
+  const display = items.slice(start, end);
+
+  return (
+    <Box>
+      {display.map((e) => {
+        return (
+          <Box>
+            <ListItem>{e.body}</ListItem>
+          </Box>
+        );
+      })}
       <Box sx={{ display: "flex", justifyContent: "center" }}>
         <Button
           onClick={() => {
             setStart(start - 10);
             setEnd(end - 10);
-            setInd(ind -1)
-          }}
-          >
+            setInd(ind - 1);
+          }}>
           <AiOutlineArrowLeft />
         </Button>
-        {arr.map((num,index) => {
+        {arr.map((num, index) => {
           return (
             <Box>
               <ListItem
-              key={index}
-                sx={{ cursor: "pointer",
-              color: index === ind ? "blue" : "red" 
-              }}
+                key={index}
+                
+                sx={{
+                  cursor: "pointer",
+                  color: index === ind ? "blue" : "red",
+                }}
                 onClick={() => {
                   setStart(num * 10);
                   setEnd(num * 10 + 10);
-                  setInd(num)
+                  setInd(num);
                 }}
-                
               >
                 {num + 1}
               </ListItem>
@@ -57,9 +56,9 @@ console.log(ind);
         })}
         <Button
           onClick={() => {
-            setStart(end );
+            setStart(end);
             setEnd(end + 10);
-            setInd(ind+1)
+            setInd(ind + 1);
           }}
         >
           <AiOutlineArrowRight />
