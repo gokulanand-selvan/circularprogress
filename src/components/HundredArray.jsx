@@ -30,7 +30,8 @@ export default function HundredArray({ items }) {
             setStart(start - 10);
             setEnd(end - 10);
             setInd(ind - 1);
-          }}>
+          }}
+        >
           <AiOutlineArrowLeft />
         </Button>
         {arr.map((num, index) => {
@@ -38,7 +39,6 @@ export default function HundredArray({ items }) {
             <Box>
               <ListItem
                 key={index}
-                
                 sx={{
                   cursor: "pointer",
                   color: index === ind ? "blue" : "red",
