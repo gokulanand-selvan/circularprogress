@@ -22,9 +22,11 @@ export default function HundredArray({ items }) {
           <Box>
             <ListItem>{e.body}</ListItem>
           </Box>
-        );
+        )
       })}
+      
       <Box sx={{ display: "flex", justifyContent: "center" }}>
+        { start >= arr[1] ? 
         <Button
           onClick={() => {
             setStart(start - 10);
@@ -33,7 +35,7 @@ export default function HundredArray({ items }) {
           }}
         >
           <AiOutlineArrowLeft />
-        </Button>
+        </Button> : null }
         {arr.map((num, index) => {
           return (
             <Box>
@@ -54,7 +56,7 @@ export default function HundredArray({ items }) {
             </Box>
           );
         })}
-        <Button
+       { ind === arr[arr.length - 1] ? null :<Button
           onClick={() => {
             setStart(end);
             setEnd(end + 10);
@@ -62,7 +64,7 @@ export default function HundredArray({ items }) {
           }}
         >
           <AiOutlineArrowRight />
-        </Button>
+        </Button>  }
       </Box>
     </Box>
   );
